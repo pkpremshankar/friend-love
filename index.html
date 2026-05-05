@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sorry Best friend </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            color: #e91e63;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: #e91e63;
+            margin: 30px 0 15px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: #e91e63;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .heart {
+            color: #e91e63;
+            font-size: 2rem;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #e91e63;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 10px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
+        }
+        
+        .btn:hover {
+            background: #c2185b;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(233, 30, 99, 0.6);
+        }
+        
+        .whatsapp-btn {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 10px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.6);
+        }
+        
+        .section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .journey-section {
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        .journey-item {
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .journey-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #e91e63;
+        }
+        
+        .message-box {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        
+        .love-letter {
+            font-style: italic;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .proposal {
+            position: relative;
+            padding: 40px;
+            background: linear-gradient(135deg, #e91e63 0%, #ff9a9e 100%);
+            color: white;
+            border-radius: 20px;
+            margin: 30px 0;
+        }
+        
+        .proposal h2 {
+            color: white;
+        }
+        
+        .proposal-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .proposal-btn {
+            background: white;
+            color: #e91e63;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .proposal-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .name-input {
+            padding: 15px;
+            font-size: 1.2rem;
+            border: 2px solid #e91e63;
+            border-radius: 10px;
+            margin: 20px 0;
+            width: 300px;
+            max-width: 80%;
+        }
+        
+        .friend-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .friend-request {
+            background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 20px 0;
+        }
+        
+        .friend-request h2 {
+            color: white;
+        }
+        
+        .romantic-quotes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .quote-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            width: 280px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .quote-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .quote-icon {
+            font-size: 2.5rem;
+            color: #e91e63;
+            margin-bottom: 15px;
+        }
+        
+        /* रिस्पॉन्सिव डिज़ाइन */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .proposal-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .name-input {
+                width: 80%;
+            }
+            
+            .romantic-quotes {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header id="nameSection">
+            <h1>मेरी प्यारी <span class="heart">❤</span></h1>
+            <p>तुम मेरी दुनिया हो, और मैं तुम्हें खुश रखना चाहता हूं</p>
+            <p> Please enter your name :</p>
+            <input type="text" class="name-input" id="userName" placeholder=" Please enter your name ">
+            <br>
+            <button class="btn" id="nameSubmitBtn">जारी रखें</button>
+        </header>
+        
+        <section id="apologySection" class="section hidden">
+            <h2>Best friend <span id="namePlaceholder1"></span>, i'm sorry <span class="heart">❤</span></h2>
+            <p>मुझे पता है मैंने गलती की है, और मुझे बहुत अफसोस है।</p>
+            
+            <div class="message-box">
+                <p class="love-letter">
+                    My Sweet Bestie <span id="namePlaceholder2"></span>,<br><br>
+                    I know I have hurt you and I am very sorry for that. 
+                    You are the most special person in my life, and seeing you sad makes me sad too.<br><br>
+                    Please forgive me. I promise it won't happen again. 
+                    Your smile means the world to me, and I want to keep it forever.<br><br>
+                    <br>
+                </p>
+            </div>
+            
+            <button class="btn" id="nextBtn1">आगे बढ़ें</button>
+        </section>
+        
+        <section id="journeySection" class="section hidden">
+            <h2><span id="namePlaceholder3"></span>, हमारा सफर <span class="heart">❤</span></h2>
+            <p>प्यार एक सफर है जो दो दिलों को एक साथ लाता है</p>
+            
+            <div class="journey-section">
+                <div class="journey-item">
+                    <div class="journey-icon">💖</div>
+                    <h3>पहली मुलाकात</h3>
+                    <p>वो पल जब मैंने पहली बार तुम्हें देखा, मेरी दुनिया बदल गई</p>
+                </div>
+                
+                <div class="journey-item">
+                    <div class="journey-icon">🌹</div>
+                    <h3>प्यार का इजहार</h3>
+                    <p>वो खूबसूरत लम्हे जब हमने एक दूसरे से प्यार का इजहार किया</p>
+                </div>
+                
+                <div class="journey-item">
+                    <div class="journey-icon">✨</div>
+                    <h3>साथ बिताए पल</h3>
+                    <p>हर वो पल जब हम साथ थे, वो मेरी जिंदगी के सबसे कीमती पल हैं</p>
+                </div>
+            </div>
+            
+            <h3>हमारे प्यार के बारे में कुछ खूबसूरत बातें</h3>
+            <div class="romantic-quotes">
+                <div class="quote-card">
+                    <div class="quote-icon">💑</div>
+                    <p>"तुम्हारे बिना मेरी जिंदगी अधूरी है, और तुम्हारे साथ हर पल सुनहरा है"</p>
+                </div>
+                
+                <div class="quote-card">
+                    <div class="quote-icon">🌅</div>
+                    <p>"तुम्हारी हंसी मेरी सुबह की पहली किरण है, और तुम्हारी बाहें मेरी शाम की शांति"</p>
+                </div>
+                
+                <div class="quote-card">
+                    <div class="quote-icon">🌟</div>
+                    <p>"तुम मेरे जीवन का वो सितारा हो जो हमेशा चमकता रहता है, अंधेरे में भी राह दिखाता है"</p>
+                </div>
+            </div>
+            
+            <button class="btn" id="nextBtn2">आगे बढ़ें</button>
+        </section>
+        
+        <section id="friendSection" class="friend-section hidden">
+            <div class="friend-request">
+                <h2><span id="namePlaceholder4"></span>, क्या तुम मेरी Best friend बनोगी? <span class="heart">❤</span></h2>
+                <p>मैं चाहता हूं कि तुम मेरी जीवन की सबसे अच्छी दोस्त बनो, जिससे मैं हर बात शेयर कर सकूं</p>
+                
+                <div class="proposal-buttons">
+                    <button class="proposal-btn" id="yesFriendBtn">हाँ! बिल्कुल</button>
+                    <button class="proposal-btn" id="noFriendBtn">नहीं</button>
+                </div>
+            </div>
+        </section>
+        
+        <section id="proposalSection" class="section hidden">
+            <div class="proposal">
+                <h2><span id="namePlaceholder5"></span>, तुम मेरी जिंदगी का सबसे खूबसूरत हिस्सा हो <span class="heart">❤</span></h2>
+                <p> मैं तुमसे सिर्फ एक सवाल पूछना चाहता हूँ — क्या तुम मेरी दुनिया बनोगी ? </p>
+                
+                <div class="proposal-buttons">
+                    <button class="proposal-btn" id="yesBtn">हाँ! बिल्कुल</button>
+                    <button class="proposal-btn" id="noBtn">नहीं</button>
+                </div>
+            </div>
+        </section>
+        
+        <section id="successSection" class="section hidden">
+            <h2> LOVE YOU FRIEND ! <span class="heart">❤</span></h2>
+            <p>मैं दुनिया का सबसे खुशकिस्मत इंसान हूं!</p>
+            <p>तुम्हारे बिना मेरी जिंदगी अधूरी है, और अब हम हमेशा साथ रहेंगे।</p>
+            <div class="heart" style="font-size: 5rem;">❤</div>
+            <button class="whatsapp-btn" id="whatsappBtn1">WhatsApp पर शेयर करें</button>
+        </section>
+        
+        <section id="friendSuccessSection" class="section hidden">
+            <h2> THANK YOU <span id="namePlaceholder6"></span>! <span class="heart">❤</span></h2>
+            <p>तुमने मेरी Best friend बनने के लिए हाँ कहा!</p>
+            <p>अब हम हर बात शेयर कर सकते हैं और हमेशा एक दूसरे के साथ रहेंगे।</p>
+            <div class="heart" style="font-size: 5rem;">❤</div>
+            <button class="btn" id="continueBtn"> आगे बढ़ें </button>
+        </section>
+        
+        <footer>
+            <p> CREATE BY Jayanti and Premshankar </p>
+        </footer>
+    </div>
+
+    <script>
+        // DOM elements
+        const nameSubmitBtn = document.getElementById('nameSubmitBtn');
+        const nextBtn1 = document.getElementById('nextBtn1');
+        const nextBtn2 = document.getElementById('nextBtn2');
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const yesFriendBtn = document.getElementById('yesFriendBtn');
+        const noFriendBtn = document.getElementById('noFriendBtn');
+        const continueBtn = document.getElementById('continueBtn');
+        const whatsappBtn1 = document.getElementById('whatsappBtn1');
+        const whatsappBtn2 = document.getElementById('whatsappBtn2');
+        
+        const nameSection = document.getElementById('nameSection');
+        const apologySection = document.getElementById('apologySection');
+        const journeySection = document.getElementById('journeySection');
+        const friendSection = document.getElementById('friendSection');
+        const proposalSection = document.getElementById('proposalSection');
+        const successSection = document.getElementById('successSection');
+        const friendSuccessSection = document.getElementById('friendSuccessSection');
+        
+        // Event listeners
+        nameSubmitBtn.addEventListener('click', () => {
+            const userName = document.getElementById('userName').value.trim();
+            if (userName === '') {
+                alert('Please enter your name');
+                return;
+            }
+            
+            // Update all name placeholders
+            document.querySelectorAll('[id^="namePlaceholder"]').forEach(el => {
+                el.textContent = userName;
+            });
+            
+            nameSection.classList.add('hidden');
+            apologySection.classList.remove('hidden');
+        });
+        
+        nextBtn1.addEventListener('click', () => {
+            apologySection.classList.add('hidden');
+            journeySection.classList.remove('hidden');
+        });
+        
+        nextBtn2.addEventListener('click', () => {
+            journeySection.classList.add('hidden');
+            friendSection.classList.remove('hidden');
+        });
+        
+        yesFriendBtn.addEventListener('click', () => {
+            friendSection.classList.add('hidden');
+            friendSuccessSection.classList.remove('hidden');
+        });
+        
+        noFriendBtn.addEventListener('click', () => {
+            // "नहीं" बटन को मूव करने के लिए फंक्शन
+            moveNoButton(noFriendBtn);
+        });
+        
+        continueBtn.addEventListener('click', () => {
+            friendSuccessSection.classList.add('hidden');
+            proposalSection.classList.remove('hidden');
+        });
+        
+        yesBtn.addEventListener('click', () => {
+            proposalSection.classList.add('hidden');
+            successSection.classList.remove('hidden');
+        });
+        
+        noBtn.addEventListener('click', () => {
+            // "नहीं" बटन को मूव करने के लिए फंक्शन
+            moveNoButton(noBtn);
+        });
+        
+        // WhatsApp शेयर फंक्शन
+        whatsappBtn1.addEventListener('click', () => {
+            const userName = document.getElementById('userName').value.trim();
+            const message = `मैंने अपनी Best friend से माफी मांगी और उन्होंने मुझे माफ कर दिया! 💖 ${userName} अब मेरी दुनिया है! देखो यह खूबसूरत वेबसाइट: ${window.location.href}`;
+            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+        
+        whatsappBtn2.addEventListener('click', () => {
+            const userName = document.getElementById('userName').value.trim();
+            const message = `मैंने अपनी Best friend से माफी मांगी और उन्होंने मुझे माफ कर दिया! 💖 ${userName} अब मेरी Best friend है! देखो यह खूबसूरत वेबसाइट: ${window.location.href}`;
+            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+        
+        // "नहीं" बटन को रैंडमली मूव करने का फंक्शन
+        function moveNoButton(button) {
+            const x = Math.random() * (window.innerWidth - 200);
+            const y = Math.random() * (window.innerHeight - 100);
+            
+            button.style.position = 'fixed';
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+        
+        // पेज लोड होने पर हार्टबीट एनिमेशन शुरू करें
+        window.addEventListener('load', () => {
+            const hearts = document.querySelectorAll('.heart');
+            hearts.forEach(heart => {
+                heart.style.animation = 'heartbeat 1.5s infinite';
+            });
+        });
+    </script>
+</body>
+</html>

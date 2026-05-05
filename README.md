@@ -68,6 +68,6 @@ This project is created with genuine emotions to make someone feel special.
 
 ---
 
-## ⭐ Support
+## ⭐ Support,...
 
 If you like this project, consider giving it a ⭐ on GitHub!
